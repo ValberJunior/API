@@ -1,11 +1,11 @@
 require('dotenv').config();
 const express = require("express");
 const app = express();
-const userRouter = require("./routes/userRouter");
+const userRouter = require("./routes/studentRouter");
 const mongoose = require("mongoose");
 
 //connect to mongoose
-mongoose.connect(process.env.MONGO_CONNECTION_URL, 
+ mongoose.connect(process.env.MONGO_CONNECTION_URL, 
     { 
         useNewUrlParser: true ,
          useUnifiedTopology: true
@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGO_CONNECTION_URL,
         }else{
             console.log("Mongo Connected")
         }
-    })
+    });
 
 app.use("/api", express.urlencoded({extended: true}), userRouter);
 

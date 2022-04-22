@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+const StudentSchema = mongoose.Schema({
 nome: { type: String, required: true, minlength: 3, maxlength: 100 },
 cpf: { type: String, required: true, minlength: 11, maxlength: 14 },
 datanasc: { type: Date, required: true, minlength: 8, maxlength: 10 },
@@ -20,7 +20,7 @@ imagem: { type: String, required: true, minlength: 3, maxlength: 100 },
 createAt: { type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model('Aluno', userSchema);
+module.exports = mongoose.model('Aluno', StudentSchema, 'alunos');
 
 
 
