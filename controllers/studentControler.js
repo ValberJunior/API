@@ -44,7 +44,7 @@ const studentController = {
             funcao: req.body.funcao,
             matricula: req.body.matricula,
             comentarios: req.body.comentarios,
-            imagem: req.body.imagem || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgR_yEfHF8h1wQvZ4G6DZjNaiFDDwakWrwj6ccZTS513nMYdXAEH6AYNGL_nirsbzs5Ok&usqp=CAU",
+            imagem: req.body.imagem || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
  
             });
 
