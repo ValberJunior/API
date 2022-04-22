@@ -34,7 +34,7 @@ const studentController = {
             datanasc: req.body.datanasc,
             email: req.body.email,
             telefone: req.body.telefone,
-            logadouro: req.body.logadouro,
+            logradouro: req.body.logradouro,
             numero: req.body.numero,
             cep: req.body.cep,
             bairro: req.body.bairro,
