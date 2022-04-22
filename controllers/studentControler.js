@@ -42,7 +42,7 @@ const studentController = {
             estado: req.body.estado,
             turma: req.body.turma,
             funcao: req.body.funcao,
-            registro: gerarRegistro(),
+            matricula: req.body.matricula,
             comentarios: req.body.comentarios,
             imagem: req.body.imagem,
  
@@ -83,9 +83,6 @@ const studentController = {
 }
 
 
-function gerarRegistro(){
-    (Math.random * 100).toString(36).substring(2,9);
-}
 
 
 module.exports = studentController;
