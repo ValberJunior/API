@@ -10,6 +10,7 @@ const studentController = {
             if(err){
                 res.send(err);
             }else{
+                res.set('Access-Control-Allow-Origin', process.env.APP_URL || "http://127.0.0.1:5500");
                 res.send(data);
             }
         })
@@ -22,6 +23,7 @@ const studentController = {
             if(err){
                 console.log(err)
             }else{
+                res.set('Access-Control-Allow-Origin', process.env.APP_URL || "http://127.0.0.1:5500");
                 res.send(data);
             }
         })
