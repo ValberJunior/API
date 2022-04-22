@@ -19,7 +19,10 @@ const whiteList = {origin: "0.0.0.0/0" };
             console.log("Mongo Connected")
         }
     });
-app.use(cors(whiteList));
+app.use((req,res,next)=>{
+    app.use(cors(whiteList));
+    next();
+});
 app.use("/api", express.urlencoded({extended: true}), userRouter);
 
 
