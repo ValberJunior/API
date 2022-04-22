@@ -16,7 +16,7 @@ turma: { type: Number, required: true, minlength: 1, maxlength: 10 },
 funcao: { type: String, required: true, minlength: 3, maxlength: 100 },
 registro: { type: String, required: true, minlength: 5, maxlength: 10 },
 comentarios: { type: String, required: true, minlength: 3, maxlength: 100 },
-imagem: { type: String, required: true, minlength: 3, maxlength: 100 },
+imagem: { type: String, required: true, minlength: 3, maxlength: 200 },
 createAt: { type: Date, default: Date.now },
 });
 
