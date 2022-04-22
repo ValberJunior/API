@@ -3,6 +3,9 @@ const express = require("express");
 const app = express();
 const userRouter = require("./routes/studentRouter");
 const mongoose = require("mongoose");
+const cors = require('cors');
+
+const whiteList = {origin: '0.0.0.0/0'};
 
 //connect to mongoose
  mongoose.connect(process.env.MONGO_CONNECTION_URL, 
@@ -18,6 +21,8 @@ const mongoose = require("mongoose");
     });
 
 app.use("/api", express.urlencoded({extended: true}), userRouter);
+
+app.use(cors(whiteList));
 
 app.listen(process.env.PORT || 5000, ()=>{
     console.log(`Server running on Port ${process.env.PORT}`)
