@@ -19,6 +19,6 @@ const mongoose = require("mongoose");
 
 app.use("/api", express.urlencoded({extended: true}), userRouter);
 
-app.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT || 5000, ()=>{
     console.log(`Server running on Port ${process.env.PORT}`)
 })
