@@ -5,7 +5,7 @@ const userRouter = require("./routes/studentRouter");
 const mongoose = require("mongoose");
 const cors = require('cors');
 
-const whiteList = {origin: "0.0.0.0/0" };
+// const whiteList = {origin: "0.0.0.0/0" };
 
 //connect to mongoose
  mongoose.connect(process.env.MONGO_CONNECTION_URL, 
@@ -20,7 +20,8 @@ const whiteList = {origin: "0.0.0.0/0" };
         }
     });
 app.use((req,res,next)=>{
-    app.use(cors(whiteList));
+    res.header("Access-Control-Allow-Origin", "*")
+    app.use(cors());
     next();
 });
 app.use("/api", express.urlencoded({extended: true}), userRouter);

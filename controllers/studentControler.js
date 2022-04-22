@@ -10,7 +10,6 @@ const studentController = {
             if(err){
                 res.send(err);
             }else{
-                res.setHeader('Access-Control-Allow-Origin', process.env.APP_URL);
                 res.send(data);
             }
         })
@@ -23,7 +22,6 @@ const studentController = {
             if(err){
                 console.log(err)
             }else{
-                res.setHeader('Access-Control-Allow-Origin', process.env.APP_URL);
                 res.send(data);
             }
         })
