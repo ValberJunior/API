@@ -10,6 +10,7 @@ const studentController = {
             if(err){
                 res.send(err);
             }else{
+                res.header("Access-Control-Allow-Origin", "*");
                 res.send(data);
             }
         })
