@@ -5,7 +5,7 @@ const userRouter = require("./routes/studentRouter");
 const mongoose = require("mongoose");
 const cors = require('cors');
 
-const whiteList = {origin: '0.0.0.0/0', origin: 'http://127.0.0.1/0'};
+const whiteList = {origin: '0.0.0.0/0'};
 
 //connect to mongoose
  mongoose.connect(process.env.MONGO_CONNECTION_URL, 
