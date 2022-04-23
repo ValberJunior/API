@@ -51,7 +51,7 @@ const studentController = {
 
             try{
                 const savedStudent = await newStudent.save();
-                res.redirect("/static");
+                res.redirect("/done");
             }catch(error){
                 res.status(400).send(error.message);
             }
