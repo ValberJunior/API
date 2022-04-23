@@ -25,6 +25,7 @@ const whiteList = {origin: "*" };
 app.use(cors(whiteList));
 
 app.use("/done",express.static(path.join(__dirname,"client")));
+app.use("*/done",express.static(path.join(__dirname,"client")));
 app.use("/delete",express.static(path.join(__dirname,"client/delete.html")));
 
 
