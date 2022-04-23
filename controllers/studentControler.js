@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const StudentModel = require("../models/Student");
 
 
+
 const studentController = {
 
     all: (req, res)=>{
@@ -50,7 +51,7 @@ const studentController = {
 
             try{
                 const savedStudent = await newStudent.save();
-                res.status(200).send("Aluno criado");
+                res.redirect("/static");
             }catch(error){
                 res.status(400).send(error.message);
             }

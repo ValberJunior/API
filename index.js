@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require("express");
 const app = express();
+const path = require("path");
 const userRouter = require("./routes/studentRouter");
 const mongoose = require("mongoose");
 const cors = require('cors');
@@ -22,6 +23,8 @@ const whiteList = {origin: "*" };
 
     
 app.use(cors(whiteList));
+
+app.use("/static",express.static(path.join(__dirname,"client")));
 
 app.use("/api", express.urlencoded({extended: true}), userRouter);
 
