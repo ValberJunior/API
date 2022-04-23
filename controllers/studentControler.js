@@ -63,7 +63,7 @@ const studentController = {
             {nome: req.body.nome}, (err,data)=>{
                 if(!err){
                     res.send(data);
-                    console.log("Data updated!");
+                    res.redirect("/done");
                 }else{
                     res.status(404).send("Invalid Data");
                 }
@@ -75,7 +75,7 @@ const studentController = {
         (err,data)=>{
             if(!err){
                 res.send(data);
-                console.log("Data Deleted!")
+                res.redirect("/delete");
             }else{
                res.status(404).send("Invalid Data");
             }
