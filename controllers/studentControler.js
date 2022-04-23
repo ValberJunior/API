@@ -59,8 +59,8 @@ const studentController = {
 
     },
     update:(req, res)=>{
-        StudentModel.findByIdAndUpdate((req.body.id),
-           (err,data)=>{
+        StudentModel.findByIdAndUpdate(req.body.id,
+            {nome: req.body.nome}, (err,data)=>{
                 if(!err){
                     res.redirect("/done");
                 }else{
