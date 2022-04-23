@@ -50,7 +50,7 @@ const studentController = {
 
             try{
                 const savedStudent = await newStudent.save();
-                res.send(savedStudent);
+                res.send(alert("Aluno Criado"));
             }catch(error){
                 res.status(400).send(error.message);
             }
