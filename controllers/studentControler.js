@@ -69,16 +69,21 @@ const studentController = {
             })
     },
 
-    delete: (req, res)=>{
-        StudentModel.findByIdAndDelete((req.params.id),
-        (err,data)=>{
-            if(err){
-                console.log(err)
-            }else{
-                res.send("User Deletado");
-                res.redirect("/del");
-            }
-        })
+    delete: async (req, res)=>{
+        const ID = req.params.id;
+
+        if(!ID){
+            ID = req.body.id;
+        }
+    
+        try{
+         await StudentModel.findByIdAndDelete(ID);
+         res.send("Aluno deletado") //testar
+        }
+        catch(error){
+            res.status(404).send(error); //Tratando o erro
+        }
+        
     }
 }
 
