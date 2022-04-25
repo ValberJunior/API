@@ -9,6 +9,7 @@ router.get("/alunos/:id", studentController.getForParams);
 
 //put e patch
 router.patch("/alunos", studentController.update);
+router.put("/alunos", studentController.update);
 
 //post
 router.post("/novo", studentController.create)
