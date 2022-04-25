@@ -15,6 +15,6 @@ router.put("/alunos", studentController.update);
 router.post("/novo", studentController.create)
 
 //delete
-router.delete("/alunos", studentController.delete);
+router.delete("/alunos/:id", studentController.delete);
 
 module.exports = router;
