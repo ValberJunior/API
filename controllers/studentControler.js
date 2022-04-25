@@ -70,7 +70,7 @@ const studentController = {
     },
 
     delete:(req, res)=>{
-        StudentModel.findByIdAndDelete((req.body.id),
+        StudentModel.findByIdAndDelete((req.params.id),
         (err,data)=>{
             if(!err){
                 res.send("Usuário deletado");
