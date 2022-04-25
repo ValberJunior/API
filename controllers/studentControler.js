@@ -78,7 +78,7 @@ const studentController = {
     
         try{
          await Link.findByIdAndDelete(ID);
-         res.redirect("/done");
+         res.redirect("/done"); //testar
         }
         catch(error){
             res.status(404).send(error); //Tratando o erro
