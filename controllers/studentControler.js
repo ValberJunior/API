@@ -69,7 +69,7 @@ const studentController = {
             })
     },
 
-    delete: (req, res)=>{
+    delete: async (req, res)=>{
         const ID = req.params.id;
 
         if(!ID){
@@ -78,7 +78,7 @@ const studentController = {
     
         try{
          await Link.findByIdAndDelete(ID);
-         res.redirect("/done"); //testar
+         res.send("Aluno deletado") //testar
         }
         catch(error){
             res.status(404).send(error); //Tratando o erro
