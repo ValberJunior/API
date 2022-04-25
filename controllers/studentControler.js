@@ -4,7 +4,7 @@ const StudentModel = require("../models/Student");
 
 
 const studentController = {
-    
+
     all: (req, res)=>{
         
         StudentModel.find((err,data)=>{
@@ -62,28 +62,22 @@ const studentController = {
         StudentModel.findByIdAndUpdate(req.body.id,
             {nome: req.body.nome}, (err,data)=>{
                 if(!err){
-                    res.redirect("/")  //testar
+                    res.status(200).send(data);  //testar
                 }else{
                     res.status(404).send("Invalid Data");
                 }
             })
     },
 
-    delete: async (req,res)=>{
-        let id = req.params.id;
-    
-        if(!id){
-            id = req.body.id;
-        }
-    
-        try{
-         await StudentModel.findByIdAndDelete(id);
-        //  res.send(id);
-        res.redirect('/');
-        }
-        catch(error){
-            res.status(404).send(error); //Tratando o erro
-        }
+    delete: (req, res)=>{
+        StudentModel.findByIdAndDelete((req.params.id),
+        (err,data)=>{
+            if(err){
+                console.log(err)
+            }else{
+                res.status(200).send(data);
+            }
+        })
     }
 
 }
