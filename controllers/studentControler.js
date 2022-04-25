@@ -62,7 +62,7 @@ const studentController = {
         StudentModel.findByIdAndUpdate(req.body.id,
             {nome: req.body.nome}, (err,data)=>{
                 if(!err){
-                    res.redirect("/api/alunos")  //testar
+                    res.redirect("alunos")  //testar
                 }else{
                     res.status(404).send("Invalid Data");
                 }
