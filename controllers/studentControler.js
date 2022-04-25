@@ -75,7 +75,7 @@ const studentController = {
             if(err){
                 console.log(err)
             }else{
-                res.send("Estudante deletado com sucesso!");
+                res.redirect("/delete");
             }
         })
     }
