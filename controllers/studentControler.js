@@ -69,13 +69,13 @@ const studentController = {
             })
     },
 
-    delete:(req, res)=>{
-        StudentModel.findByIdAndDelete((req.params.id),
+    delete: (req, res)=>{
+        StudentModel.findById((req.params.id),
         (err,data)=>{
-            if(!err){
-                res.send("Usuário deletado");
+            if(err){
+                console.log(err)
             }else{
-               res.status(404).send("Invalid Data");
+                res.send(data);
             }
         })
     }
