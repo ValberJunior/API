@@ -69,16 +69,17 @@ const studentController = {
             })
     },
 
-    delete:(req, res)=>{
-        StudentModel.deleteOne(
-        {_id: req.params.id}, (err,data)=>{
-            if(!err){
-                res.send.status(200).send("Aluno Apagado!");            
+    delete: (req, res)=>{
+        StudentModel.findById((req.params.id),
+        (err,data)=>{
+            if(err){
+                console.log(err)
             }else{
-               res.status(404).send("Invalid Data");
+                res.send("Estudante deletado com sucesso!");
             }
         })
     }
+
 }
 
 
