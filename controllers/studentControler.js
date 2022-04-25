@@ -75,7 +75,7 @@ const studentController = {
             if(err){
                 console.log(err)
             }else{
-                res.redirect("/delete");
+                res.redirect(express.static(path.join(__dirname,"client/delete.html")));
             }
         })
     }
