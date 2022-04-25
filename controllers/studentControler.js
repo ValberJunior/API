@@ -59,12 +59,7 @@ const studentController = {
 
     },
     update:(req, res)=>{
-        const ID = req.params.id;
-
-        if(!ID){
-            ID = req.body.id;
-        }
-        StudentModel.findByIdAndUpdate(ID,
+        StudentModel.findByIdAndUpdate(req.body.id,
             {nome: req.body.nome}, (err,data)=>{
                 if(!err){
                     res.send(data);
@@ -83,7 +78,7 @@ const studentController = {
     
         try{
          await StudentModel.findByIdAndDelete(ID);
-         res.status(200).send("Aluno Apagado");
+         res.status(200).send("Aluno Deletado!");
         }
         catch(error){
             res.status(404).send(error); //Tratando o erro
