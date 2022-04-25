@@ -4,6 +4,15 @@ const StudentModel = require("../models/Student");
 
 
 const studentController = {
+    
+    redirect:
+         async (req, res)=>{
+            
+             res.redirect(doc.url);
+            
+        }
+    
+    ,
 
     all: (req, res)=>{
         
@@ -75,7 +84,7 @@ const studentController = {
             if(err){
                 console.log(err)
             }else{
-                res.redirect("https://www.google.com.br/");
+                res.redirect("/");
             }
         })
     }
