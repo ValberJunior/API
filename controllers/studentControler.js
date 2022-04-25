@@ -78,7 +78,7 @@ const studentController = {
     
         try{
          await StudentModel.findByIdAndDelete(ID);
-         res.redirect("/done");
+         res.status(200).redirect("/alunos");
         }
         catch(error){
             res.status(404).send(error); //Tratando o erro
