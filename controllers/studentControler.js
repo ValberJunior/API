@@ -45,7 +45,7 @@ const studentController = {
             funcao: req.body.funcao,
             matricula: req.body.matricula,
             comentarios: req.body.comentarios,
-            imagem: req.body.imagem || "https://us.123rf.com/450wm/kritchanut/kritchanut1407/kritchanut140700335/29898193-male-avatar-profile-picture-vector-icon.jpg?ver=6",
+            imagem: req.body.imagem ,
  
             });
 
@@ -62,29 +62,23 @@ const studentController = {
         StudentModel.findByIdAndUpdate(req.body.id,
             {nome: req.body.nome}, (err,data)=>{
                 if(!err){
-                    res.status(200).send(data);  //testar
+                    res.send(data);
                 }else{
                     res.status(404).send("Invalid Data");
                 }
             })
     },
 
-    delete: async (req,res)=>{
-        const id = req.params.id;
-    
-        if(!id){
-            id = req.body.id;
-        }
-    
-        try{
-         await Link.findByIdAndDelete(id);
-            res.status(200).send("aluno deletado");
-        }
-        catch(error){
-            res.status(404).send(error); //Tratando o erro
-        }
+    delete:(req, res)=>{
+        StudentModel.findByIdAndDelete((req.body.id),
+        (err,data)=>{
+            if(!err){
+                res.send("Usuário deletado");
+            }else{
+               res.status(404).send("Invalid Data");
+            }
+        })
     }
-
 }
 
 
