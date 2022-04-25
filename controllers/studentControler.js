@@ -71,7 +71,7 @@ const studentController = {
 
     delete:(req, res)=>{
         StudentModel.deleteOne(
-        {_id: req.body.id}, (err,data)=>{
+        {_id: req.params.id}, (err,data)=>{
             if(!err){
                 res.send.status(200).send("Aluno Apagado!");            
             }else{
