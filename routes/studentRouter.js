@@ -11,9 +11,9 @@ router.get("/alunos/:id", studentController.getForParams);
 router.patch("/alunos", studentController.update);
 
 //post
-router.post("/novo", studentController.create)
+router.post("/novo", studentController.create);
 
 //delete
-router.delete("/alunos", studentController.delete);
+router.delete("/alunos/:id", studentController.delete);
 
 module.exports = router;
