@@ -59,13 +59,36 @@ const studentController = {
 
     },
     update:(req, res)=>{
-        StudentModel.findByIdAndUpdate(req.body.id,
-            {nome: req.body.nome}, (err,data)=>{
-                if(!err){
-                    res.send(data);
-                }else{
-                    res.status(404).send("Invalid Data");
-                }
+
+        const ID = req.body.id;
+
+        const options = {
+            nome: req.body.nome,
+            cpf: req.body.cpf,
+            datanasc: req.body.datanasc,
+            email: req.body.email,
+            telefone: req.body.telefone,
+            logradouro: req.body.logradouro,
+            numero: req.body.numero,
+            cep: req.body.cep,
+            bairro: req.body.bairro,
+            cidade: req.body.cidade,
+            estado: req.body.estado,
+            turma: req.body.turma,
+            funcao: req.body.funcao,
+            matricula: req.body.matricula,
+            comentarios: req.body.comentarios,
+            imagem: req.body.imagem ,
+ 
+            };
+
+            StudentModel.findByIdAndUpdate(ID,
+                options, (err,data)=>{
+                    if(!err){
+                        res.send(data);
+                    }else{
+                        res.status(404).send("Invalid Data");
+                    }
             })
     },
 
