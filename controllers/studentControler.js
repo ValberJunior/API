@@ -73,7 +73,7 @@ const studentController = {
         StudentModel.findByIdAndDelete((req.body.id),
         (err,data)=>{
             if(!err){
-                res.send(data);
+                // res.send(data);
                 res.redirect("/delete");
             }else{
                res.status(404).send("Invalid Data");
