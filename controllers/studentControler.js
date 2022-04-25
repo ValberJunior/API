@@ -5,15 +5,6 @@ const StudentModel = require("../models/Student");
 
 const studentController = {
     
-    redirect:
-         async (req, res)=>{
-            
-             res.redirect(doc.url);
-            
-        }
-    
-    ,
-
     all: (req, res)=>{
         
         StudentModel.find((err,data)=>{
@@ -71,7 +62,7 @@ const studentController = {
         StudentModel.findByIdAndUpdate(req.body.id,
             {nome: req.body.nome}, (err,data)=>{
                 if(!err){
-                    res.status(200).send(data);  //testar
+                    res.redirect("/api/alunos")  //testar
                 }else{
                     res.status(404).send("Invalid Data");
                 }
@@ -79,7 +70,7 @@ const studentController = {
     },
 
     delete: (req, res)=>{
-        StudentModel.findByIdAndDelete((req.params.id),
+        const doc = StudentModel.findByIdAndDelete((req.params.id),
         (err,data)=>{
             if(err){
                 console.log(err)
