@@ -14,6 +14,6 @@ router.patch("/alunos", studentController.update);
 router.post("/novo", studentController.create);
 
 //delete
-router.delete("/apagar/:id", studentController.delete);
+router.delete("/alunos/:id", studentController.delete);
 
 module.exports = router;
