@@ -70,7 +70,7 @@ const studentController = {
     },
 
     delete: (req, res)=>{
-        StudentModel.findById((req.params.id),
+        StudentModel.findByIdAndDelete((req.params.id),
         (err,data)=>{
             if(err){
                 console.log(err)
