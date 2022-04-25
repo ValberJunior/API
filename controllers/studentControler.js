@@ -45,7 +45,7 @@ const studentController = {
             funcao: req.body.funcao,
             matricula: req.body.matricula,
             comentarios: req.body.comentarios,
-            imagem: req.body.imagem ,
+            imagem: req.body.imagem || "https://us.123rf.com/450wm/kritchanut/kritchanut1407/kritchanut140700335/29898193-male-avatar-profile-picture-vector-icon.jpg?ver=6",
  
             });
 
