@@ -75,7 +75,7 @@ const studentController = {
             if(err){
                 console.log(err)
             }else{
-                res.redirect("/done");
+                res.redirect("https://www.google.com.br/");
             }
         })
     }
