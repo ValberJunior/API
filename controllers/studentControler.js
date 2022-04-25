@@ -70,8 +70,7 @@ const studentController = {
     },
 
     delete:(req, res)=>{
-        StudentModel.findByIdAndDelete((req.body.id),
-        {_id: req.body.id}, (err,data)=>{
+        StudentModel.deleteOne({_id: req.body.id}, (err,data)=>{
             if(!err){
                 res.send.status(200).send("Aluno Apagado!");            
             }else{
