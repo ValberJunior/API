@@ -70,14 +70,20 @@ const studentController = {
     },
 
     delete: (req, res)=>{
-        StudentModel.findById((req.params.id),
-        (err,data)=>{
-            if(err){
-                console.log(err)
-            }else{
-                res.send(data);
-            }
-        })
+        const ID = req.params.id;
+
+        if(!ID){
+            ID = req.body.id;
+        }
+    
+        try{
+         await Link.findByIdAndDelete(ID);
+         res.redirect("/done");
+        }
+        catch(error){
+            res.status(404).send(error); //Tratando o erro
+        }
+        
     }
 }
 
