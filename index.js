@@ -26,7 +26,7 @@ app.use(cors(whiteList));
 
 app.use("/done",express.static(path.join(__dirname,"client")));
 
-app.use("/delete",express.static(path.join(__dirname,"client/delete.html")));
+app.use("/delete",express.static(path.join(__dirname,"client/delete.html")));// ainda testar
 
 
 app.use("/api", express.urlencoded({extended: true}), userRouter);

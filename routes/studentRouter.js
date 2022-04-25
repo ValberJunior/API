@@ -7,7 +7,7 @@ router.get("/alunos", studentController.all);
 
 router.get("/alunos/:id", studentController.getForParams);
 
-//put or patch
+//put e patch
 router.patch("/alunos", studentController.update);
 
 //post
