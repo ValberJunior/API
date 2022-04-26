@@ -85,7 +85,7 @@ const studentController = {
             StudentModel.findByIdAndUpdate(ID,
                 options, (err,data)=>{
                     if(!err){
-                        res.send(data);
+                        res.status(200).redirect("/done");
                     }else{
                         res.status(404).send("Invalid Data");
                     }
