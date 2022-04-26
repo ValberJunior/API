@@ -79,6 +79,7 @@ const studentController = {
             funcao: req.body.funcao,
             matricula: req.body.matricula,
             comentarios: req.body.comentarios,
+            complemento: req.body.complemento,
             imagem: req.body.imagem ,
  
             };
